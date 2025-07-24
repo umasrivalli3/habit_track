@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Tracker RPG</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Task Tracker RPG</h1>
+            <div class="user-stats">
+                <div class="level-container">
+                    <i class="fas fa-star"></i>
+                    Level <span id="level">1</span>
+                </div>
+                <div class="xp-container">
+                    <div class="xp-bar">
+                        <div id="xp-progress"></div>
+                    </div>
+                    <span id="xp-text">0/100 XP</span>
+                </div>
+                <div class="streak-container">
+                    <i class="fas fa-fire"></i>
+                    <span id="streak-count">0</span> days streak
+                </div>
+            </div>
+        </header>
+
+        <div class="task-input-container">
+            <input type="text" id="taskInput" placeholder="Enter your task">
+            <input type="number" id="xpInput" placeholder="XP Value" min="1" max="100" value="10">
+            <button onclick="addTask()" id="addButton">Add Task</button>
+        </div>
+
+        <div class="tasks-container">
+            <h2>Today's Tasks</h2>
+            <div id="taskList"></div>
+        </div>
+
+        <div class="stats-container">
+            <h2>Statistics</h2>
+            <p>Tasks Completed Today: <span id="tasksCompleted">0</span></p>
+            <p>Total Tasks: <span id="totalTasks">0</span></p>
+            <p>Total XP Gained Today: <span id="xpGained">0</span></p>
+        </div>
+    </div>
+    <div id="levelUpModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 Level Up! 🎉</h2>
+            <p>Congratulations! You've reached level <span id="newLevel"></span>!</p>
+            <button onclick="closeModal()">Continue</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
